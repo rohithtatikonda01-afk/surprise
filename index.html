@@ -19,15 +19,16 @@ body{
   text-align:center;
 }
 
+/* card */
 .card{
   background: rgba(255,255,255,0.1);
-  padding:35px;
+  padding:40px;
   border-radius:20px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   width:90%;
   max-width:360px;
   box-shadow:0 10px 40px rgba(0,0,0,0.4);
-  animation: pop 1s ease;
+  animation: pop 0.8s ease;
 }
 
 @keyframes pop{
@@ -35,17 +36,9 @@ body{
   to{transform:scale(1)}
 }
 
-img{
-  width:140px;
-  height:140px;
-  border-radius:50%;
-  object-fit:cover;
-  border:4px solid white;
-  margin-bottom:15px;
-}
-
 h2{
-  margin-bottom:20px;
+  margin-bottom:25px;
+  font-size:22px;
 }
 
 button{
@@ -67,6 +60,7 @@ button{
   color:white;
 }
 
+/* hearts */
 .heart{
   position:absolute;
   font-size:22px;
@@ -83,16 +77,10 @@ button{
 <body>
 
 <div class="card">
-
-  <img src="photo.jpg">
-
   <h2 id="question">Whom I'm to you? ❤️</h2>
 
-  <div>
-    <button class="yes" onclick="next()">Yes 💖</button>
-    <button class="no" onclick="move(this)">No 😜</button>
-  </div>
-
+  <button class="yes" onclick="next()">Yes 💖</button>
+  <button class="no" onclick="move(this)">No 😜</button>
 </div>
 
 <script>
@@ -114,7 +102,7 @@ function next(){
   }
   else{
     document.querySelector(".card").innerHTML =
-      "<h1>Neelima ❤️<br><br>I LOVE YOU FOREVER 💘<br><br>– Rohith</h1>";
+      "<h1>Neelima ❤️<br><br>I LOVE YOU SO MUCH 💘<br><br>– Rohith</h1>";
   }
 }
 
@@ -127,15 +115,4 @@ function move(btn){
 /* floating hearts */
 setInterval(()=>{
   const heart=document.createElement("div");
-  heart.className="heart";
-  heart.innerHTML="❤️";
-  heart.style.left=Math.random()*100+"%";
-  document.body.appendChild(heart);
-
-  setTimeout(()=>heart.remove(),6000);
-},300);
-</script>
-
-</body>
-</html>
-  
+  heart.classN
