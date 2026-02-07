@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>For Neelima ❤️</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: linear-gradient(135deg,#8b0000,#ff1e56);
+  font-family: 'Segoe UI', sans-serif;
+  overflow:hidden;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  background: rgba(255,255,255,0.1);
+  padding:35px;
+  border-radius:20px;
+  backdrop-filter: blur(10px);
+  width:90%;
+  max-width:360px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.4);
+  animation: pop 1s ease;
+}
+
+@keyframes pop{
+  from{transform:scale(0)}
+  to{transform:scale(1)}
+}
+
+img{
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid white;
+  margin-bottom:15px;
+}
+
+h2{
+  margin-bottom:20px;
+}
+
+button{
+  padding:10px 22px;
+  margin:8px;
+  font-size:16px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.yes{
+  background:#2ed573;
+  color:white;
+}
+
+.no{
+  background:#ff4757;
+  color:white;
+}
+
+.heart{
+  position:absolute;
+  font-size:22px;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0); opacity:1;}
+  100%{transform:translateY(-900px); opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <img src="photo.jpg">
+
+  <h2 id="question">Whom I'm to you? ❤️</h2>
+
+  <div>
+    <button class="yes" onclick="next()">Yes 💖</button>
+    <button class="no" onclick="move(this)">No 😜</button>
+  </div>
+
+</div>
+
+<script>
+const questions = [
+  "Whom I'm to you? ❤️",
+  "Do you love me? 🥰",
+  "Will you stay with me forever? 💍",
+  "Will you be my Valentine? 🌹",
+  "Can I be your everything? 💕"
+];
+
+let index = 0;
+
+function next(){
+  index++;
+
+  if(index < questions.length){
+    document.getElementById("question").innerText = questions[index];
+  }
+  else{
+    document.querySelector(".card").innerHTML =
+      "<h1>Neelima ❤️<br><br>I LOVE YOU FOREVER 💘<br><br>– Rohith</h1>";
+  }
+}
+
+function move(btn){
+  btn.style.position="absolute";
+  btn.style.top=Math.random()*80+"%";
+  btn.style.left=Math.random()*80+"%";
+}
+
+/* floating hearts */
+setInterval(()=>{
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"%";
+  document.body.appendChild(heart);
+
+  setTimeout(()=>heart.remove(),6000);
+},300);
+</script>
+
+</body>
+</html>
+  
